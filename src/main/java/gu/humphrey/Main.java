@@ -6,6 +6,7 @@ import spark.template.freemarker.FreeMarkerEngine;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static spark.Spark.get;
 import static spark.SparkBase.port;
@@ -22,7 +23,13 @@ public class Main {
     get("/hello", (req, res) -> "Hello World");
 
       get("/hook", (req, res) -> {
+          Set<String> headers = req.headers();
           System.out.println("headers=" + req.headers());
+          headers.forEach((v)->{
+                      System.out.println(v+"="+req.headers(v));
+                  }
+          );
+
           System.out.println("attributes=" + req.attributes());
           System.out.println("body=" + req.body());
           System.out.println("cookies="+req.cookies());
@@ -32,7 +39,7 @@ public class Main {
           System.out.println("queryMap="+req.queryMap());
           System.out.println("queryMap="+req.queryMap().toMap());
           System.out.println("queryParams="+req.queryParams());
-          System.out.println("hub.mode="+req.queryParams("hub.mode")+"; hub.verify_token="+req.queryParams("hub.verify_token") + "; hub.challenge="+req.headers("hub.challenge"));
+          System.out.println("hub.mode="+req.queryParams("hub.mode")+"; hub.verify_token="+req.queryParams("hub.verify_token") + "; hub.challenge="+req.queryParams("hub.challenge"));
           if ("subscribe".equals(req.queryParams("hub.mode")) &&
                   "1234567890".equals(req.queryParams("hub.verify_token"))) {
               System.out.println("Validating webhook");
