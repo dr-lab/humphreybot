@@ -39,12 +39,14 @@ public class Main {
           System.out.println("queryMap="+req.queryMap());
           System.out.println("queryMap="+req.queryMap().toMap());
           System.out.println("queryParams="+req.queryParams());
-          System.out.println("hub.mode="+req.queryParams("hub.mode")+"; hub.verify_token="+req.queryParams("hub.verify_token") + "; hub.challenge="+req.queryParams("hub.challenge"));
+          System.out.println("hub.mode="+req.queryParams("hub.mode")
+                  + "; hub.verify_token="+req.queryParams("hub.verify_token")
+                  + "; hub.challenge="+req.queryParams("hub.challenge"));
           if ("subscribe".equals(req.queryParams("hub.mode")) &&
                   "1234567890".equals(req.queryParams("hub.verify_token"))) {
               System.out.println("Validating webhook");
               res.status(HttpServletResponse.SC_OK);
-              return req.headers("hub.challenge");
+              return req.queryParams("hub.challenge");
           } else {
               System.out.println("Failed validation. Make sure the validation tokens match.");
               res.status(HttpServletResponse.SC_FORBIDDEN);

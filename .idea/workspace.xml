@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72df8ac7-60c6-44b4-ab0a-95ee1432d8f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" afterPath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
     </list>
     <ignored path="maklumor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5745554">
-              <caret line="41" column="163" selection-start-line="41" selection-start-column="163" selection-end-line="41" selection-end-column="163" />
+            <state vertical-scroll-proportion="0.6155951">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -383,8 +382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5745554">
-          <caret line="41" column="163" selection-start-line="41" selection-start-column="163" selection-end-line="41" selection-end-column="163" />
+        <state vertical-scroll-proportion="0.6155951">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding />
         </state>
       </provider>
