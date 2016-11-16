@@ -23,9 +23,11 @@ public class Main {
     get("/hello", (req, res) -> "Hello World");
 
       get("/hook", (req, res) -> {
+                  System.out.println("got request on /hook");
                   if ("subscribe".equals(req.queryParams("hub.mode"))) {
+                      System.out.println("Validating hub.mode");
                       if ("1234567890".equals(req.queryParams("hub.verify_token"))) {
-                          System.out.println("Validating webhook");
+                          System.out.println("Validating passed");
                           res.status(HttpServletResponse.SC_OK);
                           return req.queryParams("hub.challenge");
                       } else {
@@ -38,7 +40,7 @@ public class Main {
                   String body = req.body();
                   System.out.println("body:"+body);
 
-                  return "";
+                  return "body:"+body;
               }
 
 
