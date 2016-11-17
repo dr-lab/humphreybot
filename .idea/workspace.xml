@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="72df8ac7-60c6-44b4-ab0a-95ee1432d8f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" afterPath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="maklumor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.876881">
-              <caret line="177" column="157" selection-start-line="177" selection-start-column="157" selection-end-line="177" selection-end-column="157" />
+            <state vertical-scroll-proportion="0.8153215">
+              <caret line="174" column="71" selection-start-line="174" selection-start-column="71" selection-end-line="174" selection-end-column="71" />
               <folding>
                 <element signature="e#3519#3520#0" expanded="true" />
                 <element signature="e#3637#3638#0" expanded="true" />
@@ -843,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.876881">
-          <caret line="177" column="157" selection-start-line="177" selection-start-column="157" selection-end-line="177" selection-end-column="157" />
+        <state vertical-scroll-proportion="0.8153215">
+          <caret line="174" column="71" selection-start-line="174" selection-start-column="71" selection-end-line="174" selection-end-column="71" />
           <folding>
             <element signature="e#3519#3520#0" expanded="true" />
             <element signature="e#3637#3638#0" expanded="true" />
