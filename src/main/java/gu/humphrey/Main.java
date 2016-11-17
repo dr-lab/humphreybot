@@ -129,8 +129,8 @@ public class Main {
                 String recipientId = (String)sender.get("id");
                 System.out.println("sender ID:" + recipientId);
 
-                answer.replace("recipientId", recipientId);
-                answer.replace("messageText", "nice to meet you!");
+                answer = answer.replace("recipientId", recipientId);
+                answer = answer.replace("messageText", "nice to meet you!");
 
                 System.out.println("answer json:" + answer);
                 return answer;
