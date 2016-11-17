@@ -16,10 +16,7 @@ import sun.net.www.http.HttpClient;
 
 import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -138,7 +135,9 @@ public class Main {
                     String text = (String) message.get("text");
                     if(text != null && text.length()>0) {
                         answer = answer.replace("recipientId", recipientId);
-                        answer = answer.replace("messageText", "nice to meet you!");
+
+
+                        answer = answer.replace("messageText", getAnswer(text));
 
                         System.out.println("answer json:" + answer);
                         return answer;
@@ -148,6 +147,41 @@ public class Main {
         }
 
         return null;
+    }
+
+    public static String getAnswer(String text){
+        text = text.toLowerCase();
+        if(text.contains("quote")){
+            return getQuote();
+        }
+
+        if(text.contains("price")) {
+            if (text.contains("iphone")) {
+                return "iPhone7 start from $649, http://www.apple.com/shop/buy-iphone/iphone-7";
+            }
+
+            if(text.contains("ipad")){
+                return "iPad start from $269, http://www.apple.com/ipad/";
+            }
+
+            if(text.contains("mac")){
+                return "Macbook Pro start from $1499, http://www.apple.com/mac/";
+            }
+
+            return "try type bellow:\n1.price iPhone \n2. price iPad \n3. price Mac";
+        }
+
+        return "Nice to meet you, try type bellow:\n" +
+                "1.price iPhone --get iPhone prices\n" +
+                "2. price iPad --get iPad prices\n" +
+                "3. price Mac --get Mac prices\n" +
+                "4. quotes --get inspirations";
+
+    }
+
+    public static String getQuote(){
+        int index = random.nextInt(Quotes.quotes.length-1);
+        return Quotes.quotes[index];
     }
 
 
@@ -164,5 +198,5 @@ public class Main {
     private static String PAGE_TOKEN="EAAEsjishk4QBAMvZCAC7NU4mSpMRhKsZCoUE41YVYDSc86f7tM4NEM7hJUZABDUi7aOStStDuUKbUlKoXJcSH1xjvodc7bZAbnZAgQdhd94tbWi44yiVx8uJHUyBVRhfWBcXdZC5MO6utPFOY05ixLOd9keDs724ZAMvZBO2bpgC4wZDZD";
     private static String POST_END_POINT = "https://graph.facebook.com/v2.6/me/messages?access_token=";
 
-
+    private static Random random = new Random();
 }
