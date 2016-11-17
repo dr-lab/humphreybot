@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72df8ac7-60c6-44b4-ab0a-95ee1432d8f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" afterPath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gu/humphrey/Quotes.java" afterPath="$PROJECT_DIR$/src/main/java/gu/humphrey/Quotes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="maklumor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +53,8 @@
       <file leaf-file-name="Quotes.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Quotes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48806942">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.39045554">
+              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -821,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Quotes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48806942">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.39045554">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding />
         </state>
       </provider>
