@@ -46,7 +46,7 @@ public class MainTest {
     }
 
     //for test only, token should not be public in Prod
-    private static String PAGE_TOKEN="EAAEsjishk4QBAMvZCAC7NU4mSpMRhKsZCoUE41YVYDSc86f7tM4NEM7hJUZABDUi7aOStStDuUKbUlKoXJcSH1xjvodc7bZAbnZAgQdhd94tbWi44yiVx8uJHUyBVRhfWBcXdZC5MO6utPFOY05ixLOd9keDs724ZAMvZBO2bpgC4wZDZD";
+    private static String PAGE_TOKEN="EAAEsjishk4QBAIhxXPb0YmadkB1YjsJto4NmpQkoewjhTkGZC9J4Xfs4V3w9egrCsZB8FWntFfG9iDRIrN9vHBwVmP1PVR7wg9ZAQ9EalhdWFoVrrk9TuZA2So6PCDC3XhSMeCG5snFubRIZChwsCVLmPUdGlCwAPEZBJrFyfj6gZDZD";
     private static String POST_END_POINT = "https://graph.facebook.com/v2.6/me/messages?access_token=";
 
     @Test
