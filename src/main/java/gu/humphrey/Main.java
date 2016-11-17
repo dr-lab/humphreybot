@@ -175,7 +175,7 @@ public class Main {
             return "try type:'price iPhone|iPad|Mac'";
         }
 
-        return "Nice to meet you, try type 'price iPhone|iPad|Mac' or type 'Quotes' for inspiration or type 'music' for exciting!";
+        return "Nice to meet you! try type \"iPhone Price\", \"iPad Price\", \"Mac Price\", or type \"Quotes\" for inspiration or type \"music\" for exciting!";
 
 
     }
