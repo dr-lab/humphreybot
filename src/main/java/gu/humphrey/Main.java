@@ -159,7 +159,7 @@ public class Main {
             return "Never stop playing, start FREE for 3 months. http://www.apple.com/music/";
         }
 
-        if(text.contains("price")) {
+        if(text.contains("buy")) {
             if (text.contains("iphone")) {
                 return "iPhone7 start from $649, http://www.apple.com/shop/buy-iphone/iphone-7";
             }
@@ -172,10 +172,10 @@ public class Main {
                 return "Macbook Pro start from $1499, http://www.apple.com/mac/";
             }
 
-            return "try type: 'iPhone Price', 'iPad Price', 'Mac Price'";
+            return "try type: 'Buy iPhone', 'Buy iPad', 'Buy Mac'";
         }
 
-        return "Nice to meet you! try type 'iPhone Price', 'iPad Price', 'Mac Price', or type 'Quotes' for inspiration or type 'music' for exciting!";
+        return "Nice to meet you! try type 'Buy iPhone', 'Buy iPad', 'Buy Mac', or type 'Quotes' for inspiration or type 'Music' for exciting!";
 
 
     }
