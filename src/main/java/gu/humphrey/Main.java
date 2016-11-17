@@ -155,6 +155,10 @@ public class Main {
             return getQuote();
         }
 
+        if(text.contains("music")){
+            return "Never stop playing, start FREE for 3 months. http://www.apple.com/music/";
+        }
+
         if(text.contains("price")) {
             if (text.contains("iphone")) {
                 return "iPhone7 start from $649, http://www.apple.com/shop/buy-iphone/iphone-7";
@@ -168,14 +172,11 @@ public class Main {
                 return "Macbook Pro start from $1499, http://www.apple.com/mac/";
             }
 
-            return "try type bellow:\n1.price iPhone \n2. price iPad \n3. price Mac";
+            return "try type:'price iPhone|iPad|Mac'";
         }
 
-        return "Nice to meet you, try type bellow:\n" +
-                "1.price iPhone --get iPhone prices\n" +
-                "2. price iPad --get iPad prices\n" +
-                "3. price Mac --get Mac prices\n" +
-                "4. quotes --get inspirations";
+        return "Nice to meet you, try type 'price iPhone|iPad|Mac' or type 'Quotes' for inspiration or type 'music' for exciting!";
+
 
     }
 
