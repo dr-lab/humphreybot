@@ -64,35 +64,35 @@ public class Main {
 
                     Gson gson = new Gson();
                     Map<String, Object> map = gson.fromJson(body, Map.class);
-//                    if("page".equals(map.get("object"))){
-//
-//                        //body:{"object":"page",
-//                        // "entry":[{"id":"587172308136817","time":1479336429601,"messaging":[{"sender":{"id":"1392645960775398"},"recipient":{"id":"587172308136817"},"timestamp":1479336429569,"message":{"mid":"mid.1479336429569:eefeed0d71","seq":22,"text":"Hello"}}]}]}
-//
-//                        CloseableHttpAsyncClient httpAsyncClients = getHttpAsyncClients();
-//
-//                        HttpPost httpPost = new HttpPost(POST_END_POINT+PAGE_TOKEN);
-//                        StringEntity params =new StringEntity(buildAnswer(body));
-//                        httpPost.setHeader("Content-type", "application/json");
-//                        httpPost.setEntity(params);
-//
-//                        httpAsyncClients.execute(httpPost, new FutureCallback<HttpResponse>() {
-//                            @Override
-//                            public void completed(HttpResponse httpResponse) {
-//                                System.out.println("Sent message successfully!");
-//                            }
-//
-//                            @Override
-//                            public void failed(Exception e) {
-//                                System.out.println("Sent message failed " + e);
-//                            }
-//
-//                            @Override
-//                            public void cancelled() {
-//
-//                            }
-//                        });
-//                    }
+                    if("page".equals(map.get("object"))){
+
+                        //body:{"object":"page",
+                        // "entry":[{"id":"587172308136817","time":1479336429601,"messaging":[{"sender":{"id":"1392645960775398"},"recipient":{"id":"587172308136817"},"timestamp":1479336429569,"message":{"mid":"mid.1479336429569:eefeed0d71","seq":22,"text":"Hello"}}]}]}
+
+                        CloseableHttpAsyncClient httpAsyncClients = getHttpAsyncClients();
+
+                        HttpPost httpPost = new HttpPost(POST_END_POINT+PAGE_TOKEN);
+                        StringEntity params =new StringEntity(buildAnswer(body));
+                        httpPost.setHeader("Content-type", "application/json");
+                        httpPost.setEntity(params);
+
+                        httpAsyncClients.execute(httpPost, new FutureCallback<HttpResponse>() {
+                            @Override
+                            public void completed(HttpResponse httpResponse) {
+                                System.out.println("Sent message successfully!");
+                            }
+
+                            @Override
+                            public void failed(Exception e) {
+                                System.out.println("Sent message failed " + e);
+                            }
+
+                            @Override
+                            public void cancelled() {
+
+                            }
+                        });
+                    }
 
                     return "";
                 }
