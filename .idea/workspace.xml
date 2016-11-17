@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72df8ac7-60c6-44b4-ab0a-95ee1432d8f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" afterPath="$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="maklumor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +27,15 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.23119015">
-              <caret line="74" column="73" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.2612859">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="2" selection-end-line="94" selection-end-column="23" />
               <folding>
-                <element signature="e#3438#3439#0" expanded="true" />
-                <element signature="e#3548#3549#0" expanded="true" />
+                <marker date="1479348245000" expanded="true" signature="2331:2628" placeholder="//..." />
+                <marker date="1479348245000" expanded="true" signature="3134:3755" placeholder="{...}" />
+                <marker date="1479348245000" expanded="true" signature="3255:3372" placeholder="{...}" />
+                <marker date="1479348245000" expanded="true" signature="3477:3514" placeholder=" { " />
+                <marker date="1479348245000" expanded="true" signature="3561:3593" placeholder=" }" />
+                <marker date="1479348245000" expanded="true" signature="3691:3727" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -821,11 +824,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.23119015">
-          <caret line="74" column="73" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.2612859">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="2" selection-end-line="94" selection-end-column="23" />
           <folding>
-            <element signature="e#3438#3439#0" expanded="true" />
-            <element signature="e#3548#3549#0" expanded="true" />
+            <marker date="1479348245000" expanded="true" signature="2331:2628" placeholder="//..." />
+            <marker date="1479348245000" expanded="true" signature="3134:3755" placeholder="{...}" />
+            <marker date="1479348245000" expanded="true" signature="3255:3372" placeholder="{...}" />
+            <marker date="1479348245000" expanded="true" signature="3477:3514" placeholder=" { " />
+            <marker date="1479348245000" expanded="true" signature="3561:3593" placeholder=" }" />
+            <marker date="1479348245000" expanded="true" signature="3691:3727" placeholder="{...}" />
           </folding>
         </state>
       </provider>
