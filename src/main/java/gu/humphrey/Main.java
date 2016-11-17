@@ -114,7 +114,7 @@ public class Main {
         //body:{"object":"page","entry":[{"id":"587172308136817","time":1479336429601,"messaging":[{"sender":{"id":"1392645960775398"},"recipient":{"id":"587172308136817"},"timestamp":1479336429569,"message":{"mid":"mid.1479336429569:eefeed0d71","seq":22,"text":"Hello"}}]}]}
         //String body = "{\"object\":\"page\",\"entry\":[{\"id\":\"587172308136817\",\"time\":1479336429601,\"messaging\":[{\"sender\":{\"id\":\"1392645960775398\"},\"recipient\":{\"id\":\"587172308136817\"},\"timestamp\":1479336429569,\"message\":{\"mid\":\"mid.1479336429569:eefeed0d71\",\"seq\":22,\"text\":\"Hello\"}}]}]}";
 
-        String answer = "{recipient: {id: \"recipientId\"},message: {text: \"messageText\"}}";
+        String answer = "{\"recipient\": {\"id\": \"recipientId\"},\"message\": {\"text\": \"messageText\"}}";
         Gson gson = new Gson();
         Map map = gson.fromJson(inComingResponse, Map.class);
 
@@ -131,6 +131,8 @@ public class Main {
 
                 answer.replace("recipientId", recipientId);
                 answer.replace("messageText", "nice to meet you!");
+
+                System.out.println("answer json:" + answer);
                 return answer;
             }
         }

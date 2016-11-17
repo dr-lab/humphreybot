@@ -3,8 +3,15 @@ package gu.humphrey;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.concurrent.FutureCallback;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
+import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -36,5 +43,37 @@ public class MainTest {
                 System.out.println("sender ID:"+senderId);
             }
         }
+    }
+
+    //for test only, token should not be public in Prod
+    private static String PAGE_TOKEN="EAAEsjishk4QBAMvZCAC7NU4mSpMRhKsZCoUE41YVYDSc86f7tM4NEM7hJUZABDUi7aOStStDuUKbUlKoXJcSH1xjvodc7bZAbnZAgQdhd94tbWi44yiVx8uJHUyBVRhfWBcXdZC5MO6utPFOY05ixLOd9keDs724ZAMvZBO2bpgC4wZDZD";
+    private static String POST_END_POINT = "https://graph.facebook.com/v2.6/me/messages?access_token=";
+
+    @Test
+    public void sendMessage() throws UnsupportedEncodingException {
+        CloseableHttpAsyncClient httpAsyncClients = HttpAsyncClients.createDefault();
+
+        String answer = "{recipient: {id: \"1392645960775398\"},message: {text: \"Nice to meet you!\"}}";
+        HttpPost httpPost = new HttpPost(POST_END_POINT+PAGE_TOKEN);
+        StringEntity params =new StringEntity(answer);
+        httpPost.setHeader("Content-type", "application/json");
+        httpPost.setEntity(params);
+
+        httpAsyncClients.execute(httpPost, new FutureCallback<HttpResponse>() {
+            @Override
+            public void completed(HttpResponse httpResponse) {
+                System.out.println("Sent message successfully!");
+            }
+
+            @Override
+            public void failed(Exception e) {
+                System.out.println("Sent message failed " + e);
+            }
+
+            @Override
+            public void cancelled() {
+                System.out.println("Sent message canceled! ");
+            }
+        });
     }
 }
