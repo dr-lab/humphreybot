@@ -71,7 +71,7 @@ public class Main {
                     }
 
                     CloseableHttpAsyncClient httpAsyncClients = HttpAsyncClients.createDefault();
-
+                    httpAsyncClients.start();
 
                     HttpPost httpPost = new HttpPost(POST_END_POINT+PAGE_TOKEN);
                     StringEntity params =new StringEntity(buildAnswer(body));
