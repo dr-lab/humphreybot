@@ -27,11 +27,15 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.876881">
-              <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.24076608">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="2" selection-end-line="94" selection-end-column="23" />
               <folding>
-                <element signature="e#3438#3439#0" expanded="true" />
-                <element signature="e#3548#3549#0" expanded="true" />
+                <marker date="1479346665000" expanded="true" signature="2331:2628" placeholder="//..." />
+                <marker date="1479346665000" expanded="true" signature="3134:3755" placeholder="{...}" />
+                <marker date="1479346665000" expanded="true" signature="3255:3372" placeholder="{...}" />
+                <marker date="1479346665000" expanded="true" signature="3477:3514" placeholder=" { " />
+                <marker date="1479346665000" expanded="true" signature="3561:3593" placeholder=" }" />
+                <marker date="1479346665000" expanded="true" signature="3691:3727" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -820,11 +824,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gu/humphrey/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.876881">
-          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.24076608">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="2" selection-end-line="94" selection-end-column="23" />
           <folding>
-            <element signature="e#3438#3439#0" expanded="true" />
-            <element signature="e#3548#3549#0" expanded="true" />
+            <marker date="1479346665000" expanded="true" signature="2331:2628" placeholder="//..." />
+            <marker date="1479346665000" expanded="true" signature="3134:3755" placeholder="{...}" />
+            <marker date="1479346665000" expanded="true" signature="3255:3372" placeholder="{...}" />
+            <marker date="1479346665000" expanded="true" signature="3477:3514" placeholder=" { " />
+            <marker date="1479346665000" expanded="true" signature="3561:3593" placeholder=" }" />
+            <marker date="1479346665000" expanded="true" signature="3691:3727" placeholder="{...}" />
           </folding>
         </state>
       </provider>
