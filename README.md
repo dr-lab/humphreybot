@@ -1,2 +1,2 @@
-# maklumor
+# Humphreybot
 fb bot
