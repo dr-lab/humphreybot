@@ -105,11 +105,11 @@ public class Main {
             System.out.println("content:"+content);
 
             System.out.println("Response data in XML:");
-            String response =  "<xml> <ToUserName><![CDATA["+fromUsername+"]]></ToUserName> " +
+            String response =  "<xml> <ToUserName><![CDATA["+fromUserName+"]]></ToUserName> " +
                     "<FromUserName><![CDATA["+toUsername+"]]></FromUserName> " +
                     "<CreateTime>"+Calendar.getInstance().getTimeInMillis()+"</CreateTime> " +
                     "<MsgType><![CDATA[text]]></MsgType> " +
-                    "<Content><![CDATA["+content+"]]></Content> " +
+                    "<Content><![CDATA["+buildAnswer(content)+"]]></Content> " +
                     "<FuncFlag>0</FuncFlag> </xml>";
             System.out.println("Response data in XML:"+response);
             return response;
