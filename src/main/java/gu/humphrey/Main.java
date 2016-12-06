@@ -62,6 +62,7 @@ public class Main {
 
 
             if( tmpStr.equals(signature)){
+                System.out.println("signature match");
                 return echoStr;
             }else{
                 return "error"+echoStr;
