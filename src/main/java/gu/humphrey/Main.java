@@ -111,7 +111,7 @@ public class Main {
                     "<MsgType><![CDATA[text]]></MsgType> " +
                     "<Content><![CDATA["+content+"]]></Content> " +
                     "<FuncFlag>0</FuncFlag> </xml>";
-
+            System.out.println("Response data in XML:"+response);
             return response;
          });
 
