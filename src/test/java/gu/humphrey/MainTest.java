@@ -10,7 +10,17 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.junit.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
@@ -75,5 +85,43 @@ public class MainTest {
                 System.out.println("Sent message canceled! ");
             }
         });
+    }
+
+
+    @Test
+    public void testXml() throws ParserConfigurationException, IOException, SAXException {
+        String xml = "<xml>\n" +
+                "\t<ToUserName><![CDATA[gh_642f06cdd5c6]]></ToUserName>\n" +
+                "\t<FromUserName><![CDATA[oeAP4v6SjEZHL2bx5qIb2lvLfY1I]]></FromUserName>\n" +
+                "\t<CreateTime>1481010695</CreateTime>\n" +
+                "\t<MsgType><![CDATA[text]]></MsgType>\n" +
+                "\t<Content><![CDATA[Hello]]></Content>\n" +
+                "\t<MsgId>6360892500461492740</MsgId>\n" +
+                "</xml>";
+
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        InputSource is = new InputSource(new StringReader(xml));
+        Document doc = dBuilder.parse(is);
+
+        System.out.println("parsing xml data successfully");
+
+        //optional, but recommended
+        //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+        doc.getDocumentElement().normalize();
+
+        System.out.println("Normalize doc successfully");
+
+        Element xmlElement = doc.getDocumentElement();
+
+        //Element xmlElement = doc.getElementById("xml");
+        String fromUserName = xmlElement.getElementsByTagName("FromUserName").item(0).getFirstChild().getNodeValue();
+        String toUsername = xmlElement.getElementsByTagName("ToUserName").item(0).getFirstChild().getNodeValue();
+        String content = xmlElement.getElementsByTagName("Content").item(0).getFirstChild().getNodeValue();
+
+        System.out.println("fromUserName:"+fromUserName);
+        System.out.println("toUsername:"+toUsername);
+        System.out.println("content:"+content);
+
     }
 }

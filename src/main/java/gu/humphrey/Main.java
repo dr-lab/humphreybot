@@ -95,9 +95,10 @@ public class Main {
             Element xmlElement = doc.getDocumentElement();
 
             //Element xmlElement = doc.getElementById("xml");
-            String fromUserName = xmlElement.getElementsByTagName("FromUserName").item(0).getNodeValue();
-            String toUsername = xmlElement.getElementsByTagName("ToUserName").item(0).getNodeValue();
-            String content = xmlElement.getElementsByTagName("Content").item(0).getNodeValue();
+            String fromUserName = xmlElement.getElementsByTagName("FromUserName").item(0).getFirstChild().getNodeValue();
+            String toUsername = xmlElement.getElementsByTagName("ToUserName").item(0).getFirstChild().getNodeValue();
+            String content = xmlElement.getElementsByTagName("Content").item(0).getFirstChild().getNodeValue();
+
 
             System.out.println("fromUserName:"+fromUserName);
             System.out.println("toUsername:"+toUsername);
