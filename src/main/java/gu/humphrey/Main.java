@@ -37,7 +37,7 @@ public class Main {
          *
          */
 
-        get("/", (req, res)->{
+        get("/wechat", (req, res)->{
             String echoStr = req.queryParams("echostr");
             String signature = req.queryParams("signature");
             String timestamp = req.queryParams("timestamp");
@@ -156,12 +156,12 @@ public class Main {
 
         );
 
-//        get("/", (request, response) -> {
-//            Map<String, Object> attributes = new HashMap<>();
-//            attributes.put("message", "Hello World!");
-//
-//            return new ModelAndView(attributes, "index.ftl");
-//        }, new FreeMarkerEngine());
+        get("/", (request, response) -> {
+            Map<String, Object> attributes = new HashMap<>();
+            attributes.put("message", "Hello World!");
+
+            return new ModelAndView(attributes, "index.ftl");
+        }, new FreeMarkerEngine());
 
 
     }
