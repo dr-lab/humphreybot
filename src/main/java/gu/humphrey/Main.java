@@ -75,11 +75,11 @@ public class Main {
         post("/wechat", (req, res) -> {
             String postData = req.body();
             System.out.println(postData);
-            
+
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             ByteArrayInputStream input =  new ByteArrayInputStream(postData.getBytes("UTF-8"));
-            Document doc = dBuilder.parse(postData);
+            Document doc = dBuilder.parse(input);
 
             //optional, but recommended
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
