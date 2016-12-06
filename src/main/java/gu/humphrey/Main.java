@@ -38,6 +38,7 @@ public class Main {
          */
 
         get("/", (req, res)->{
+            String echoStr = req.queryParams("echostr");
             String signature = req.queryParams("signature");
             String timestamp = req.queryParams("timestamp");
             String nonce = req.queryParams("nonce");
@@ -52,9 +53,9 @@ public class Main {
 
 
             if( tmpStr.equals(signature)){
-                return true;
+                return echoStr;
             }else{
-                return false;
+                return "error"+echoStr;
             }
 
         });
