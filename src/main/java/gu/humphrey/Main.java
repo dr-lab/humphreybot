@@ -2,6 +2,8 @@ package gu.humphrey;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.sun.javafx.binding.StringFormatter;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.*;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -10,11 +12,14 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.apache.http.params.HttpParams;
+import org.w3c.dom.Document;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 import sun.net.www.http.HttpClient;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.net.URI;
 import java.util.*;
 
@@ -33,6 +38,68 @@ public class Main {
         staticFileLocation("/public");
 
         get("/hello", (req, res) -> "Hello World");
+
+
+        /**
+         * wechat
+         *
+         */
+
+        get("/", (req, res)->{
+            String signature = req.queryParams("signature");
+            String timestamp = req.queryParams("timestamp");
+            String nonce = req.queryParams("nonce");
+
+            String token = "1234567890";
+            String[] tmpArray = new String[]{token, timestamp, nonce};
+            Arrays.sort(tmpArray);
+
+            String tmpStr = tmpArray[0]+tmpArray[1]+tmpArray[2];
+
+            tmpStr = DigestUtils.sha1Hex(tmpStr);
+
+
+            if( tmpStr.equals(signature)){
+                return true;
+            }else{
+                return false;
+            }
+
+        });
+
+        post("/responseMsg", (req, res) -> {
+            String postData = req.body();
+
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(postData);
+
+            //optional, but recommended
+            //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+            doc.getDocumentElement().normalize();
+
+            String fromUserName = doc.getElementsByTagName("FromUserName").item(0).getNodeValue();
+            String toUsername = doc.getElementsByTagName("ToUserName").item(0).getNodeValue();
+            String content = doc.getElementsByTagName("Content").item(0).getNodeValue();
+
+
+            String textTpl = "<xml> <ToUserName><![CDATA[%s]]></ToUserName> " +
+                    "<FromUserName><![CDATA[%s]]></FromUserName> " +
+                    "<CreateTime>%s</CreateTime> " +
+                    "<MsgType><![CDATA[%s]]></MsgType> " +
+                    "<Content><![CDATA[%s]]></Content> " +
+                    "<FuncFlag>0</FuncFlag> </xml>";
+
+            return StringFormatter.format(textTpl, fromUserName, toUsername, Calendar.getInstance().getTimeInMillis(), "text",content);
+
+
+
+                });
+
+
+        /**
+         * Facebook
+         */
 
         get("/hook", (req, res) -> {
                     System.out.println("got get on /hook");
