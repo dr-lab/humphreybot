@@ -158,7 +158,7 @@ public class Main {
 
                         if (answer != null) {
                             HttpPost httpPost = new HttpPost(POST_END_POINT + PAGE_TOKEN);
-                            StringEntity params = new StringEntity(buildAnswer(body));
+                            StringEntity params = new StringEntity(getAnswer(body));
                             httpPost.setHeader("Content-type", "application/json");
                             httpPost.setEntity(params);
 
