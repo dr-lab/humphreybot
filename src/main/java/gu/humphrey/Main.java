@@ -62,9 +62,10 @@ public class Main {
 
 
             if( tmpStr.equals(signature)){
-                System.out.println("signature match");
+                System.out.println("signature match:"+echoStr);
                 return echoStr;
             }else{
+                System.out.println("signature NOT match:"+echoStr);
                 return "error"+echoStr;
             }
 
@@ -72,6 +73,7 @@ public class Main {
 
         post("/wechat", (req, res) -> {
             String postData = req.body();
+            System.out.println(postData);
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -86,12 +88,14 @@ public class Main {
             String content = doc.getElementsByTagName("Content").item(0).getNodeValue();
 
 
-            return "<xml> <ToUserName><![CDATA["+toUsername+"]]></ToUserName> " +
+            String response =  "<xml> <ToUserName><![CDATA["+toUsername+"]]></ToUserName> " +
                     "<FromUserName><![CDATA["+fromUserName+"]]></FromUserName> " +
                     "<CreateTime>"+Calendar.getInstance().getTimeInMillis()+"</CreateTime> " +
                     "<MsgType><![CDATA[text]]></MsgType> " +
                     "<Content><![CDATA["+content+"]]></Content> " +
                     "<FuncFlag>0</FuncFlag> </xml>";
+
+            return response;
          });
 
 
