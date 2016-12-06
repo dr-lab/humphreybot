@@ -70,7 +70,7 @@ public class Main {
 
         });
 
-        post("/responseMsg", (req, res) -> {
+        post("/wechat", (req, res) -> {
             String postData = req.body();
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
