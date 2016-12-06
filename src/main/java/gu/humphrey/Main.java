@@ -83,18 +83,13 @@ public class Main {
             String content = doc.getElementsByTagName("Content").item(0).getNodeValue();
 
 
-            String textTpl = "<xml> <ToUserName><![CDATA[%s]]></ToUserName> " +
-                    "<FromUserName><![CDATA[%s]]></FromUserName> " +
-                    "<CreateTime>%s</CreateTime> " +
-                    "<MsgType><![CDATA[%s]]></MsgType> " +
-                    "<Content><![CDATA[%s]]></Content> " +
+            return "<xml> <ToUserName><![CDATA["+toUsername+"]]></ToUserName> " +
+                    "<FromUserName><![CDATA["+fromUserName+"]]></FromUserName> " +
+                    "<CreateTime>"+Calendar.getInstance().getTimeInMillis()+"</CreateTime> " +
+                    "<MsgType><![CDATA[text]]></MsgType> " +
+                    "<Content><![CDATA["+content+"]]></Content> " +
                     "<FuncFlag>0</FuncFlag> </xml>";
-
-            return StringFormatter.format(textTpl, fromUserName, toUsername, Calendar.getInstance().getTimeInMillis(), "text",content);
-
-
-
-                });
+         });
 
 
         /**
@@ -168,12 +163,12 @@ public class Main {
 
         );
 
-        get("/", (request, response) -> {
-            Map<String, Object> attributes = new HashMap<>();
-            attributes.put("message", "Hello World!");
-
-            return new ModelAndView(attributes, "index.ftl");
-        }, new FreeMarkerEngine());
+//        get("/", (request, response) -> {
+//            Map<String, Object> attributes = new HashMap<>();
+//            attributes.put("message", "Hello World!");
+//
+//            return new ModelAndView(attributes, "index.ftl");
+//        }, new FreeMarkerEngine());
 
 
     }
