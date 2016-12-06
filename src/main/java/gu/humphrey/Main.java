@@ -92,7 +92,9 @@ public class Main {
 
             System.out.println("Normalize doc successfully");
 
-            Element xmlElement = doc.getElementById("xml");
+            Element xmlElement = doc.getDocumentElement();
+
+            //Element xmlElement = doc.getElementById("xml");
             String fromUserName = xmlElement.getElementsByTagName("FromUserName").item(0).getNodeValue();
             String toUsername = xmlElement.getElementsByTagName("ToUserName").item(0).getNodeValue();
             String content = xmlElement.getElementsByTagName("Content").item(0).getNodeValue();
