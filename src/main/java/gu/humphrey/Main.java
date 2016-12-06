@@ -62,7 +62,7 @@ public class Main {
 
 
             if( tmpStr.equals(signature)){
-                System.out.println("signature match:"+echoStr);
+                System.out.println("signature match return original echoStri:"+echoStr);
                 return echoStr;
             }else{
                 System.out.println("signature NOT match:"+echoStr);
@@ -81,7 +81,7 @@ public class Main {
 
             //optional, but recommended
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-            doc.getDocumentElement().normalize();
+            //doc.getDocumentElement().normalize();
 
             String fromUserName = doc.getElementsByTagName("FromUserName").item(0).getNodeValue();
             String toUsername = doc.getElementsByTagName("ToUserName").item(0).getNodeValue();
