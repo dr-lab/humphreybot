@@ -45,13 +45,20 @@ public class Main {
             String timestamp = req.queryParams("timestamp");
             String nonce = req.queryParams("nonce");
 
+            System.out.println("echoStr:"+echoStr);
+            System.out.println("signature:"+signature);
+            System.out.println("timestamp:"+timestamp);
+            System.out.println("nonce:"+nonce);
+
             String token = "1234567890";
             String[] tmpArray = new String[]{token, timestamp, nonce};
             Arrays.sort(tmpArray);
 
             String tmpStr = tmpArray[0]+tmpArray[1]+tmpArray[2];
+            System.out.println("tmpStr:"+tmpStr);
 
             tmpStr = DigestUtils.sha1Hex(tmpStr);
+            System.out.println("tmpStr+sha1:"+tmpStr);
 
 
             if( tmpStr.equals(signature)){
