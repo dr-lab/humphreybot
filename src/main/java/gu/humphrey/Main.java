@@ -109,7 +109,7 @@ public class Main {
                     "<FromUserName><![CDATA["+toUsername+"]]></FromUserName> " +
                     "<CreateTime>"+Calendar.getInstance().getTimeInMillis()+"</CreateTime> " +
                     "<MsgType><![CDATA[text]]></MsgType> " +
-                    "<Content><![CDATA["+buildAnswer(content)+"]]></Content> " +
+                    "<Content><![CDATA["+getAnswer(content)+"]]></Content> " +
                     "<FuncFlag>0</FuncFlag> </xml>";
             System.out.println("Response data in XML:"+response);
             return response;
@@ -158,7 +158,7 @@ public class Main {
 
                         if (answer != null) {
                             HttpPost httpPost = new HttpPost(POST_END_POINT + PAGE_TOKEN);
-                            StringEntity params = new StringEntity(getAnswer(body));
+                            StringEntity params = new StringEntity(buildAnswer(body));
                             httpPost.setHeader("Content-type", "application/json");
                             httpPost.setEntity(params);
 
