@@ -74,6 +74,7 @@ public class Main {
 
         post("/wechat", (req, res) -> {
             String postData = req.body();
+            System.out.println("Incoming data in XML:");
             System.out.println(postData);
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -81,15 +82,23 @@ public class Main {
             ByteArrayInputStream input =  new ByteArrayInputStream(postData.getBytes("UTF-8"));
             Document doc = dBuilder.parse(input);
 
+            System.out.println("parsing xml data successfully");
+
             //optional, but recommended
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();
+
+            System.out.println("Normalize doc successfully");
 
             String fromUserName = doc.getElementsByTagName("FromUserName").item(0).getNodeValue();
             String toUsername = doc.getElementsByTagName("ToUserName").item(0).getNodeValue();
             String content = doc.getElementsByTagName("Content").item(0).getNodeValue();
 
+            System.out.println("fromUserName:"+fromUserName);
+            System.out.println("toUsername:"+toUsername);
+            System.out.println("content:"+content);
 
+            System.out.println("Response data in XML:");
             String response =  "<xml> <ToUserName><![CDATA["+toUsername+"]]></ToUserName> " +
                     "<FromUserName><![CDATA["+fromUserName+"]]></FromUserName> " +
                     "<CreateTime>"+Calendar.getInstance().getTimeInMillis()+"</CreateTime> " +
