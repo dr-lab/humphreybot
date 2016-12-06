@@ -9,6 +9,8 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 
@@ -90,9 +92,10 @@ public class Main {
 
             System.out.println("Normalize doc successfully");
 
-            String fromUserName = doc.getElementsByTagName("FromUserName").item(0).getNodeValue();
-            String toUsername = doc.getElementsByTagName("ToUserName").item(0).getNodeValue();
-            String content = doc.getElementsByTagName("Content").item(0).getNodeValue();
+            Element xmlElement = doc.getElementById("xml");
+            String fromUserName = xmlElement.getElementsByTagName("FromUserName").item(0).getNodeValue();
+            String toUsername = xmlElement.getElementsByTagName("ToUserName").item(0).getNodeValue();
+            String content = xmlElement.getElementsByTagName("Content").item(0).getNodeValue();
 
             System.out.println("fromUserName:"+fromUserName);
             System.out.println("toUsername:"+toUsername);
