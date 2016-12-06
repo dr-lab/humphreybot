@@ -15,6 +15,7 @@ import spark.template.freemarker.FreeMarkerEngine;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.ByteArrayInputStream;
 import java.util.*;
 
 import static spark.Spark.get;
@@ -74,14 +75,15 @@ public class Main {
         post("/wechat", (req, res) -> {
             String postData = req.body();
             System.out.println(postData);
-
+            
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            ByteArrayInputStream input =  new ByteArrayInputStream(postData.getBytes("UTF-8"));
             Document doc = dBuilder.parse(postData);
 
             //optional, but recommended
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-            //doc.getDocumentElement().normalize();
+            doc.getDocumentElement().normalize();
 
             String fromUserName = doc.getElementsByTagName("FromUserName").item(0).getNodeValue();
             String toUsername = doc.getElementsByTagName("ToUserName").item(0).getNodeValue();
